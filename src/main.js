@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var token_generator_1 = require("./token_generator");
+console.log('Exemplo de geração de token de autenticação.');
+var url = 'https://api.cloud4mobile.com.br/devices?status=1';
+var method = 'GET';
+var consumerKey = '<insira_aqui>';
+var consumerSecret = '<insira_aqui>';
+var token = new token_generator_1.TokenGenerator().getBearerToken(url, method, consumerKey, consumerSecret);
+console.log('HTTP header a ser utilizado: ');
+console.log('Authentication: Bearer ' + token);
