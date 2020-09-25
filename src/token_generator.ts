@@ -5,10 +5,12 @@ export class TokenGenerator {
 
     public getBearerToken(url: string, method: string, consumerKey: string, consumerSecret: string) {
 
+        let dateTimeNow = new Date().getTime()
+
         let jsonAuth : JsonAuthentication = { 
             consumer_key: consumerKey,
             nonce: Math.random.toString(),
-            timestamp: Math.floor((new Date).getTime() / 1000),
+            timestamp: Math.floor(dateTimeNow / 1000),
             version: '1.0',
             signature: ''
         }
